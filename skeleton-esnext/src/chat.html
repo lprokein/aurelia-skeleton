@@ -1,0 +1,28 @@
+<template>
+  <section class="au-animate">
+    <h2>${heading}</h2>
+    <form role="form" submit.delegate="submit()">
+      <div class="form-group">
+        <label for="fn">Select chat room</label>
+        <select value.bind="selectedRoom">
+          <option repeat.for="room of roomOptions" value.bind="room">${room}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fn">Sender</label>
+        <input type="text" value.bind="sender" class="form-control" id="email" placeholder="email">
+      </div>
+      <div class="form-group">
+        <label for="ln">Message</label>
+        <textarea type="text" value.bind="message" class="form-control" id="message" placeholder="message">
+      </div>
+      <div class="form-group">
+        <label>Room selected</label>
+        <p class="help-block">${selectedRoom}</p>
+        <label>Your message</label>
+        <p class="help-block">${message}</p>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </section>
+</template>
